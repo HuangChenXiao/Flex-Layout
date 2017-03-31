@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>flex布局</title>
+		<link href="css/flex.css" rel="stylesheet" />
+		<style>
+		    .container{
+		    	width: 100%;
+		    }
+			.row{
+				background: #E88024;
+				color: #fff;
+				font-size: 16px;
+				font-weight: 600;
+				height: 50px;
+				text-align: center;
+				width: 50px;
+				margin: 10px;
+			}
+			.no-m-t{
+				margin-top: 0;
+			}
+			.no-m-b{
+				margin-bottom: 0;
+			}
+			.row100{
+				background: #E88024;
+				height: 50px;
+				width: 100%;
+				margin: 10px;
+			}
+			.row200{
+				background: #E88024;
+				height: 50px;
+				width: 200px;
+				margin: 10px;
+			}
+			.row300{
+				background: #E88024;
+				height: 50px;
+				width: 300px;
+				margin: 10px;
+			}
+			.row500{
+				background: #E88024;
+				height: 50px;
+				width: 500px;
+				margin: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h3>主轴为水平方向，起点在左端</h3>
+		<div class="flex f-d-r container">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+		<h3>主轴为水平方向，起点在右端</h3>
+		<div class="flex f-d-r-r container">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+			<h3>主轴为垂直方向，起点在上沿<h3>
+			<div class="flex f-d-c container">
+				<div class="row"></div>
+				<div class="row"></div>
+				<div class="row"></div>
+				<div class="row"></div>
+				<div class="row"></div>
+			</div>
+			<!--<h3>主轴为垂直方向，起点在下沿<h3>
+			<div class="flex f-d-c-r container">
+				<div class="row"></div>
+				<div class="row"></div>
+				<div class="row"></div>
+				<div class="row"></div>
+				<div class="row"></div>
+			</div>-->
+		<h3>不换行</h3>
+		<div class="flex f-w-n container">
+			<div class="row300"></div>
+			<div class="row200"></div>
+			<div class="row500"></div>
+			<div class="row200"></div>
+			<div class="row300"></div>
+		</div>
+		<h3>换行</h3>
+		<div class="flex f-w-w container">
+			<div class="row300"></div>
+			<div class="row200"></div>
+			<div class="row500"></div>
+			<div class="row200"></div>
+			<div class="row300"></div>
+		</div>
+		<h3>换行，第一行在上方</h3>
+		<div class="flex f-w-w-r container">
+			<div class="row300"></div>
+			<div class="row200"></div>
+			<div class="row500"></div>
+			<div class="row200"></div>
+			<div class="row300"></div>
+		</div>
+		<h3>左对齐</h3>
+		<div class="flex j-c-f-s container">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+		<h3>右对齐</h3>
+		<div class="flex j-c-f-e container">
+			<div class="row100"></div>
+			<div class="row100"></div>
+			<div class="row100"></div>
+		</div>
+		<h3>居中</h3>
+		<div class="flex j-c-c container">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+		<h3>两端对齐，项目之间的间隔都相等</h3>
+		<div class="flex j-c-s-b container">
+			<div class="row200"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row500"></div>
+		</div>
+		<h3>每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</h3>
+		<div class="flex j-c-s-a container">
+			<div class="row200"></div>
+			<div class="row"></div>
+			<div class="row300"></div>
+		</div>
+		<h3>居顶部对齐</h3>
+		<div class="flex a-i-f-s container" style="height: 200px;background: #eee;">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+		<h3>居底部对齐</h3>
+		<div class="flex a-i-f-e container" style="height: 200px;background: #eee;">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+		<h3>居中心点对齐</h3>
+		<div class="flex a-i-c container" style="height: 200px;background: #eee;">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+		</div>
+		<h3>项目的第一行文字的基线对齐</h3>
+		<div class="flex a-i-b container" style="height: 200px;background: #eee;">
+			<div class="row" style="height: 100px; width: 70px;">对齐</div>
+			<div class="row" style="height: 120px; width: 70px">对齐了吗</div>
+			<div class="row" style="height: 90px; width: 70px">对齐了吗</div>
+			<div class="row" style="width: 70px">对齐了吗</div>
+			<div class="row" style="height: 170px; width: 70px">对齐了吗</div>
+		</div>
+		
+		<h3>数值越小，排列越靠前，默认为0。</h3>
+		<div class="flex container" style="height: 200px;background: #eee;">
+			<div class="row flex o-1">1</div>
+			<div class="row flex o-0">0</div>
+			<div class="row flex o-5">5</div>
+			<div class="row flex o-2">2</div>
+			<div class="row flex o-3">3</div>
+		</div>
+		
+		<h3>默认为0，即如果存在剩余空间，也不放大</h3>
+		<div class="flex a-i-c container" style="height: 200px;background: #eee;">
+			<div class="row flex f-g-0"></div>
+			<div class="row flex f-g-2"></div>
+			<div class="row flex f-g-0"></div>
+			<div class="row flex f-g-1"></div>
+		</div>
+		<h3>默认为1，即如果空间不足，该项目将缩小</h3>
+		<div class="flex a-i-c container" style="height: 200px;background: #eee;">
+			<div class="row500 flex f-s-0"></div>
+			<div class="row500 flex f-s-1"></div>
+			<div class="row500 flex f-s-2"></div>
+			<div class="row500 flex f-s-3"></div>
+			<div class="row500 flex f-s-4"></div>
+		</div>
+		
+		<h3>居底部对齐align-self</h3>
+		<div class="flex a-i-f-e container" style="height: 200px;background: #eee;">
+			<div class="row flex a-s-s"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row flex a-s-s"></div>
+			<div class="row"></div>
+		</div>
+	</body>
+</html>
